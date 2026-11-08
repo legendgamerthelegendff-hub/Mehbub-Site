@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mehbub Sites creates modern, responsive websites for businesses, creators and growing brands.">
+  <title>Mehbub Sites | Websites that move your business forward</title>
+  <style>
+    :root{--bg:#080b14;--panel:#101625;--panel2:#151e30;--text:#f4f7ff;--muted:#aab4c8;--accent:#7c5cff;--accent2:#24d6c5;--line:rgba(255,255,255,.1);--max:1140px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav-wrap{position:sticky;top:0;z-index:20;background:rgba(8,11,20,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-size:1.15rem;font-weight:800;letter-spacing:-.04em}
+    .brand-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-weight:900}
+    .nav-links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:.93rem}
+    .nav-links a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 21px;font-weight:750;background:linear-gradient(110deg,var(--accent),#5e8cff);color:white;box-shadow:0 10px 30px rgba(124,92,255,.22);transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .btn-outline{background:transparent;border:1px solid var(--line);box-shadow:none}
+    .menu-btn{display:none;background:none;color:white;border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:1.2rem}
+    .hero{position:relative;overflow:hidden;padding:105px 0 95px}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}
+    .hero:before{width:480px;height:480px;right:-100px;top:-170px;background:radial-gradient(circle,rgba(124,92,255,.25),transparent 68%)}
+    .hero:after{width:400px;height:400px;left:-190px;bottom:-220px;background:radial-gradient(circle,rgba(36,214,197,.16),transparent 70%)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:55px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid rgba(36,214,197,.28);border-radius:99px;color:#8ff5e9;background:rgba(36,214,197,.07);font-size:.82rem;font-weight:700}
+    .dot{width:7px;height:7px;background:var(--accent2);border-radius:50%;box-shadow:0 0 12px var(--accent2)}
+    h1{font-size:clamp(2.8rem,6vw,5.25rem);line-height:1.04;letter-spacing:-.065em;margin:24px 0}
+    .gradient{background:linear-gradient(100deg,#a994ff,#63e9dc);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:1.08rem;max-width:580px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .mini-proof{display:flex;gap:20px;flex-wrap:wrap;margin-top:35px;color:var(--muted);font-size:.87rem}
+    .mini-proof span:before{content:"✓";color:var(--accent2);font-weight:900;margin-right:7px}
+    .mockup{background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025));padding:13px;border:1px solid rgba(255,255,255,.14);border-radius:23px;box-shadow:0 35px 100px rgba(0,0,0,.4);transform:rotate(1.5deg)}
+    .browser{background:#0c1220;border-radius:15px;overflow:hidden}
+    .browser-top{height:42px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid var(--line)}
+    .browser-top i{width:8px;height:8px;border-radius:50%;background:#ff6b75}.browser-top i:nth-child(2){background:#ffca62}.browser-top i:nth-child(3){background:#4bd69b}
+    .browser-content{padding:25px;min-height:340px;background:radial-gradient(circle at 85% 15%,rgba(124,92,255,.25),transparent 35%),#111a2b}
+    .fake-nav{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:#dce4ff}
+    .fake-logo{font-weight:900;font-size:.85rem}
+    .fake-pill{background:#7c5cff;padding:6px 10px;border-radius:20px}
+    .fake-heading{font-size:2rem;line-height:1.08;font-weight:850;letter-spacing:-.05em;margin:43px 0 12px;max-width:300px}
+    .fake-copy{font-size:.72rem;color:#aab4c8;max-width:240px}
+    .fake-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:30px}
+    .fake-card{height:78px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:linear-gradient(145deg,rgba(124,92,255,.2),rgba(36,214,197,.06))}
+    section{padding:88px 0}
+    .section-head{text-align:center;max-width:680px;margin:0 auto 44px}
+    .kicker{color:#9d8aff;text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:850}
+    h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.055em;line-height:1.12;margin:12px 0}
+    .section-head p,.muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:25px;transition:.25s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(124,92,255,.5)}
+    .icon-box{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:rgba(124,92,255,.16);color:#b6a6ff;font-size:1.35rem;margin-bottom:18px}
+    .card h3{font-size:1.13rem;margin-bottom:8px}.card p{color:var(--muted);font-size:.93rem}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+    .about-art{min-height:310px;border-radius:22px;border:1px solid var(--line);background:radial-gradient(circle at 25% 25%,rgba(36,214,197,.2),transparent 35%),radial-gradient(circle at 75% 75%,rgba(124,92,255,.28),transparent 40%),var(--panel);display:grid;place-items:center}
+    .orbit{width:190px;height:190px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:grid;place-items:center;position:relative}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.14);border-radius:50%;inset:22px}
+    .orbit:after{inset:-20px;border-style:dashed}
+    .orbit strong{font-size:3rem;letter-spacing:-.08em;background:linear-gradient(120deg,#a994ff,#63e9dc);color:transparent;background-clip:text}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;color:#dbe3f6;font-size:.92rem}
+    .checks span:before{content:"✓";color:var(--accent2);margin-right:8px;font-weight:900}
+    .project{padding:0;overflow:hidden}
+    .project-preview{height:175px;padding:20px;display:flex;align-items:end;background:linear-gradient(135deg,rgba(124,92,255,.55),rgba(36,214,197,.2)),#1a2440}
+    .project-preview.alt{background:linear-gradient(135deg,rgba(36,214,197,.35),rgba(255,177,92,.2)),#1a2440}
+    .project-preview.third{background:linear-gradient(135deg,rgba(255,120,155,.3),rgba(124,92,255,.35)),#1a2440}
+    .preview-window{width:100%;height:115px;border-radius:10px 10px 0 0;background:rgba(8,11,20,.8);border:1px solid rgba(255,255,255,.25);padding:13px}
+    .preview-line{height:7px;border-radius:5px;background:rgba(255,255,255,.55);width:42%;margin-bottom:8px}
+    .preview-line.short{width:24%;opacity:.5}.preview-blocks{display:flex;gap:7px;margin-top:12px}.preview-blocks i{display:block;height:42px;flex:1;border-radius:5px;background:rgba(124,92,255,.5)}
+    .project-info{padding:20px}.project-info small{color:#9d8aff;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .price{font-size:2rem;font-weight:850;letter-spacing:-.05em;margin:13px 0}.price small{font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:0}
+    .price-card ul{list-style:none;margin:18px 0 23px;color:var(--muted);font-size:.91rem}
+    .price-card li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    .price-card li:before{content:"✓";color:var(--accent2);margin-right:9px}
+    .featured{border-color:rgba(124,92,255,.7);box-shadow:0 18px 50px rgba(124,92,255,.12);position:relative}
+    .popular{position:absolute;right:18px;top:18px;color:#b7a8ff;font-size:.7rem;font-weight:850;text-transform:uppercase;letter-spacing:.1em}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px}
+    .contact-info{padding:28px;border-radius:18px;background:linear-gradient(145deg,rgba(124,92,255,.2),rgba(36,214,197,.07));border:1px solid var(--line)}
+    .contact-info p{color:var(--muted);margin:12px 0 25px}
+    .contact-detail{padding:12px 0;border-top:1px solid var(--line);color:#dce4f6}
+    form{display:grid;gap:14px;background:var(--panel);border:1px solid var(--line);padding:26px;border-radius:18px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    label{display:block;font-size:.82rem;color:#cbd4e7;margin-bottom:6px}
+    input,textarea,select{width:100%;background:#0b1120;color:white;border:1px solid var(--line);border-radius:10px;padding:12px 13px;outline:none}
+    input:focus,textarea:focus,select:focus{border-color:var(--accent)}
+    textarea{min-height:120px;resize:vertical}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.87rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:850px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding-top:75px}.mockup{max-width:590px;margin:0 auto}.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.container{width:min(100% - 30px,var(--max))}nav{height:68px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#0c1220;padding:20px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-links .btn{width:100%}.nav-cta{display:none}.hero{padding:65px 0}.hero-grid{gap:38px}h1{font-size:3rem}.cards{grid-template-columns:1fr}section{padding:68px 0}.checks{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.browser-content{min-height:300px}.fake-heading{font-size:1.7rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav class="container">
+      <a class="brand" href="#home"><span class="brand-mark">M</span> Mehbub Sites</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+      </div>
+      <a class="btn nav-cta" href="#contact">Let's talk <span>↗</span></a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Creative web development studio</span>
+          <h1>We build websites that make your brand <span class="gradient">stand out.</span></h1>
+          <p>Mehbub Sites helps businesses, creators and ambitious ideas build a strong online presence with clean design and smooth experiences.</p>
+          <div class="hero-actions"><a class="btn" href="#contact">Start a project <span>↗</span></a><a class="btn btn-outline" href="#work">Explore our work</a></div>
+          <div class="mini-proof"><span>Modern design</span><span>Mobile friendly</span><span>Built for your goals</span></div>
+        </div>
+        <div class="mockup" aria-label="Website design preview">
+          <div class="browser"><div class="browser-top"><i></i><i></i><i></i></div>
+            <div class="browser-content">
+              <div class="fake-nav"><span class="fake-logo">YOUR BRAND.</span><span class="fake-pill">Get started ↗</span></div>
+              <div class="fake-heading">A better web starts here.</div>
+              <div class="fake-copy">Beautiful digital experiences made for people and businesses.</div>
+              <div class="fake-cards"><div class="fake-card"></div><div class="fake-card"></div><div class="fake-card"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal"><span class="kicker">What we do</span><h2>Everything you need to grow online</h2><p>From a simple first website to a complete business presence, we focus on making every page useful, clear and memorable.</p></div>
+        <div class="cards">
+          <article class="card reveal"><div class="icon-box">✦</div><h3>Business Websites</h3><p>Professional websites that explain what you do and help customers connect with your business.</p></article>
+          <article class="card reveal"><div class="icon-box">▣</div><h3>Landing Pages</h3><p>Focused pages for products, services, launches and campaigns, designed around one clear goal.</p></article>
+          <article class="card reveal"><div class="icon-box">◈</div><h3>Portfolio Websites</h3><p>Showcase your projects, skills and story with a polished online portfolio.</p></article>
+          <article class="card reveal"><div class="icon-box">⌘</div><h3>Website Redesign</h3><p>Give an old website a fresh look, clearer structure and a better mobile experience.</p></article>
+          <article class="card reveal"><div class="icon-box">⚡</div><h3>Frontend Development</h3><p>Responsive interfaces built with clean HTML, CSS and JavaScript.</p></article>
+          <article class="card reveal"><div class="icon-box">◎</div><h3>Support & Updates</h3><p>Help with content changes, new sections and improvements as your website grows.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-art reveal"><div class="orbit"><strong>MS.</strong></div></div>
+        <div class="reveal"><span class="kicker">About Mehbub Sites</span><h2>Good design. Clear message. Better first impressions.</h2><p class="muted">Mehbub Sites is a web design and development brand focused on making the internet feel simpler for growing businesses and creators. Every project starts by understanding the goal, then shaping a website around it.</p>
+          <div class="checks"><span>Responsive layouts</span><span>Clean visual design</span><span>Easy navigation</span><span>Thoughtful details</span></div>
+          <div style="margin-top:28px"><a class="btn btn-outline" href="#contact">Tell us your idea ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head reveal"><span class="kicker">Selected concepts</span><h2>A glimpse of what we can create</h2><p>These are sample concept projects to show possible directions. Replace them with your real client work when ready.</p></div>
+        <div class="cards">
+          <article class="card project reveal"><div class="project-preview"><div class="preview-window"><div class="preview-line"></div><div class="preview-line short"></div><div class="preview-blocks"><i></i><i></i><i></i></div></div></div><div class="project-info"><small>Concept 01 · Business</small><h3>Northstar Consulting</h3><p class="muted">A confident, clean business landing page.</p></div></article>
+          <article class="card project reveal"><div class="project-preview alt"><div class="preview-window"><div class="preview-line"></div><div class="preview-line short"></div><div class="preview-blocks"><i></i><i></i><i></i></div></div></div><div class="project-info"><small>Concept 02 · Creative</small><h3>Studio Canvas</h3><p class="muted">A visual portfolio for creative work.</p></div></article>
+          <article class="card project reveal"><div class="project-preview third"><div class="preview-window"><div class="preview-line"></div><div class="preview-line short"></div><div class="preview-blocks"><i></i><i></i><i></i></div></div></div><div class="project-info"><small>Concept 03 · Product</small><h3>Nova Product</h3><p class="muted">A product page with a bold visual style.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head reveal"><span class="kicker">Simple packages</span><h2>Choose a starting point</h2><p>Example package structures. Final pricing depends on pages, features and project requirements.</p></div>
+        <div class="cards">
+          <article class="card price-card reveal"><h3>Starter</h3><p class="muted">For a personal page or simple online presence.</p><div class="price">Let's discuss</div><ul><li>Single-page website</li><li>Responsive design</li><li>Contact section</li><li>Basic animations</li></ul><a class="btn btn-outline" href="#contact">Enquire now</a></article>
+          <article class="card price-card featured reveal"><span class="popular">Popular choice</span><h3>Business</h3><p class="muted">For a business ready to present its services.</p><div class="price">Let's discuss</div><ul><li>Up to 5 sections/pages</li><li>Custom visual direction</li><li>Services and contact forms</li><li>Mobile-friendly layout</li></ul><a class="btn" href="#contact">Enquire now</a></article>
+          <article class="card price-card reveal"><h3>Custom</h3><p class="muted">For special features and larger ideas.</p><div class="price">Let's discuss</div><ul><li>Custom page structure</li><li>Advanced interactions</li><li>Feature planning</li><li>Ongoing support options</li></ul><a class="btn btn-outline" href="#contact">Enquire now</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal"><span class="kicker">Get in touch</span><h2>Have a project in mind?</h2><p>Share a few details and start a conversation about your website.</p></div>
+        <div class="contact-grid">
+          <div class="contact-info reveal"><h3>Let's create something great.</h3><p>Tell us what you are building, who it is for and what you want your website to achieve.</p><div class="contact-detail">✉ Email: Add your business email</div><div class="contact-detail">☎ Phone / WhatsApp: Add your number</div><div class="contact-detail">⌖ Available for online projects</div></div>
+          <form id="contactForm" class="reveal">
+            <div class="form-row"><div><label for="name">Your name</label><input id="name" name="name" placeholder="Enter your name" required></div><div><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div></div>
+            <div><label for="service">What do you need?</label><select id="service" name="service"><option>Business website</option><option>Landing page</option><option>Portfolio website</option><option>Website redesign</option><option>Other project</option></select></div>
+            <div><label for="message">Tell us about your project</label><textarea id="message" name="message" placeholder="A short description of your idea..." required></textarea></div>
+            <button class="btn" type="submit">Prepare message ↗</button>
+            <p class="muted" id="formNote" style="font-size:.8rem">Demo form: it will prepare an email draft. Add your real business email in the code to receive enquiries.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-mark">M</span> Mehbub Sites</a><span>© <span id="year"></span> Mehbub Sites. All rights reserved.</span><span>Designed to make your brand stand out.</span></div></footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent('Website enquiry - ' + data.get('name'));
+      const body = encodeURIComponent(
+        'Name: ' + data.get('name') + '\\n' +
+        'Email: ' + data.get('email') + '\\n' +
+        'Service: ' + data.get('service') + '\\n\\n' +
+        'Project details:\\n' + data.get('message')
+      );
+      // Replace YOUR_EMAIL@example.com with your real business email address.
+      window.location.href = 'mailto:YOUR_EMAIL@example.com?subject=' + subject + '&body=' + body;
+      document.getElementById('formNote').textContent = 'Your email app should open with the enquiry prepared. Replace the placeholder email in the code first.';
+    });
+  </script>
+</body>
+</html>
